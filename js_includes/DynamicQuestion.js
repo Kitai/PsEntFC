@@ -1,10 +1,10 @@
 //###########################
 //
-// PRELOADER CONTROLLER
-//
-// last edit: 04-06-2016 by Jeremy
+// last edit: 08-31-2016 by Jeremy
 //
 // History of changes:
+//  - 08-31-2016:
+//      + Re-implemented the possibility to use {this: ...} in a general way (lost in course of the previous modifications)
 //  - 04-08-2016:
 //      + Modified 'answers' so that it accepts non-string values (jQuery Objects)
 //  - 04-06-2016:
@@ -306,11 +306,8 @@ jqueryWidget: {
           }
             // Printing one the non-element items of the control
           else if (currentElement.hasOwnProperty("this")) {
-              // The context element
-            if (currentElement.this == "context")
-              domelements[el] = $(document.createElement("p")).append(this.context);
               // Choice between the answers
-            else if (currentElement.this == "answers") {
+            if (currentElement.this == "answers") {
               // The TR where the answers will be displayed
               this.xl = $(document.createElement("tr"));
               // If a position to show the keys to press has been provided
@@ -396,8 +393,8 @@ jqueryWidget: {
                   else if (currentElement.showKeys == "bottom") table.append(this.keyLabels);
               }
             }
-            else if (currentElement.this == "legend")
-                domelements[el].append($(document.createElement("p")).append(currentElement.question).addClass(this.cssPrefix+"legend"));
+            else if (this.options.hasOwnProperty(currentElement.this))
+                domelements[el] = $("<div>").append(this.options[currentElement.this]);
             else
                 assert(1==2, "Unrecognized value for 'this' ('"+currentElement.this+"') in DynamicQuestion");
                 

@@ -16,12 +16,10 @@ p {
 
 .choice {
   font-size:120%;
-  border-spacing: 30px 0px;
 }
 
-.scale-box {
+li.scale-box {
   border: solid 2px black;
-  padding: 5px;
 }
 
 .contextPicture {
