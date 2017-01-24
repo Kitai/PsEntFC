@@ -60,8 +60,9 @@ var items = [
            "DynamicQuestion",
            {
                legend: function(x){ return [x.Condition,x.item,x.group,x.Test_Sentence].join("+"); },
-               context: function(x){ return x.Context_Sentence; },
-               test: function(x){ return x.Test_Sentence; },
+               context: function(x){ return $("<p>").html(x.Context_Sentence).css({"max-width":"40em", "font-size":"1.3em"}); },
+               test: function(x){ return $("<p>").html(x.Test_Sentence).css({"max-width":"40em", "font-size":"1.3em", 
+                                                                             "font-weight": "bold", "text-align":"center"}); },
                answers: function(x){ 
                    var target = {person:x.target_filename, monday: x.target_M, tuesday: x.target_T, wednesday: x.target_W},
                        competitor = {person:x.competitor_filename, monday: x.competitor_M, tuesday: x.competitor_T, wednesday: x.competitor_W},
@@ -90,9 +91,9 @@ var items = [
                    // "Condition: "+x.Condition+"; Item: "+x.item+"; Group: "+x.group,
                    {pause: 150},
                    //x.Context_Sentence,
-                   {this: "answers", showKeys: "top"},
                    {this: "context"},
-                   {pause: 150, newRT: true},
+                   {this: "answers", showKeys: "top"},
+                   {pause: "key ", newRT: true},
                    //x.Test_Sentence,
                    {this: "test"},
                    function(t){ 
