@@ -43,3 +43,7 @@ span.retry:hover {
 span.retry:visited {
     color: blue;
 }
+
+.patches {
+  border: solid 2px black;
+}
