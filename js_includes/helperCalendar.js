@@ -61,7 +61,7 @@ function newCalendar(calendars, numberOfDays, id, hideWednesday) {
                 monday = {width: 65, height: 65, left: 112, top: 13},      // The default position and size of the picture in the Monday slot
                 tuesday = {width: 65, height: 65, left: 185, top: 13},     // The default position and size of the picture in the Tuesday slot
                 wednesday = {width: 65, height: 65, left: 260, top: 13},   // The default position and size of the picture in the Wednesday slot
-                blankWednesday = {left: 254, top: 0, width: 80, height: 83, background: "white"}; // Using a DIV with a white background to mask the Wednesday
+                blankWednesday = {left: 254, top: 0, width: 75, height: 83, background: "white"}; // Using a DIV with a white background to mask the Wednesday
     }
 
     // patches is the array of objects representing the different DIV in the click2uncover element
