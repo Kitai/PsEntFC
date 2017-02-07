@@ -22,9 +22,9 @@ var items = [
 
     ["Instructions", "__SetCounter__", { }],
     
-    ["Instructions", "Form", {html: {include: "ProlificConsentForm.html"}, continueOnReturn: true}],
+    ["Instructions", "Form", {html: {include: "IbexConsentSona2017.html"}, continueOnReturn: true}],
 
-    ["Instructions", "Message", {html: {include: "warning.html"}}],
+    // ["Instructions", "Message", {html: {include: "warning.html"}}],
     
     ["Instructions", "Message", {html: {include: "instructions.html"}}],
     
@@ -61,8 +61,9 @@ var items = [
            {
                legend: function(x){ return [x.Condition,x.item,x.group,x.Test_Sentence].join("+"); },
                context: function(x){ return $("<p>").html(x.Context_Sentence).css({"max-width":"40em", "font-size":"1.3em"}); },
-               test: function(x){ return $("<p>").html(x.Test_Sentence).css({"max-width":"40em", "font-size":"1.3em", 
-                                                                             "font-weight": "bold", "text-align":"center"}); },
+               test: function(x){ return $("<p>").html(x.Test_Sentence).css({"max-width":"40em", "font-size":"1.5em", 
+                                                                             "font-weight": "bold", "text-align":"center",
+                                                                             "margin-top":"1.5em"}); },
                answers: function(x){ 
                    var target = {person:x.target_filename, monday: x.target_M, tuesday: x.target_T, wednesday: x.target_W},
                        competitor = {person:x.competitor_filename, monday: x.competitor_M, tuesday: x.competitor_T, wednesday: x.competitor_W},
